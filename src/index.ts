@@ -4,6 +4,7 @@ import cors from "cors";
 import helmet from "helmet";
 import { testRouter } from "./test.router";
 import { metricsRouter } from "./metrics.router";
+import { taskRouter } from "./task.router";
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use(express.json());
 
 app.use("/api/test", testRouter);
 app.use("/api/metrics", metricsRouter);
+app.use("/api/task", taskRouter);
 
 app.listen(process.env.PORT, () => {
 	console.log(`Listening on port ${process.env.PORT}`);
