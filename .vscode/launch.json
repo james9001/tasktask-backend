@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "cwd": "${workspaceFolder}",
+      "name": "Debug TaskTask Backend",
+      "outFiles": [
+        "${workspaceFolder}/dist/**/*.js"
+      ],
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/src/index.ts",
+      "request": "launch",
+      "sourceMaps": true,
+      "type": "node"
+    }
+  ],
+  "version": "0.2.0"
+}
