@@ -21,6 +21,12 @@ taskRouter.post("/search", async (req: Request, resp: Response) => {
 	resp.status(200).send(response);
 });
 
+taskRouter.post("/", async (req: Request, resp: Response) => {
+	const deserialised = req.body as Task;
+	const created = await taskRepository.create(deserialised);
+	resp.status(200).send(created);
+});
+
 export interface TaskSearchRequestCriteria {
 	pageSize: number;
 	pageNumber: number;
