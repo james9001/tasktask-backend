@@ -2,7 +2,6 @@ import * as dotenv from "dotenv";
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
-import { testRouter } from "./test.router";
 import { metricsRouter } from "./metrics.router";
 import { taskRouter } from "./task.router";
 import "./polyfills";
@@ -19,7 +18,6 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/test", testRouter);
 app.use("/api/metrics", metricsRouter);
 app.use("/api/task", taskRouter);
 

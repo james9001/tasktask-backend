@@ -10,7 +10,11 @@ register.setDefaultLabels({
 promclient.collectDefaultMetrics({ register });
 
 metricsRouter.get("/prometheus", async function (req, res) {
-	res.set("Content-Type", register.contentType);
-	const metrics = await register.metrics();
-	res.send(metrics);
+	try {
+		res.set("Content-Type", register.contentType);
+		res.send(await register.metrics());
+	} catch (error) {
+		console.log(error);
+		res.status(500).json({ error: "Internal server error" });
+	}
 });
