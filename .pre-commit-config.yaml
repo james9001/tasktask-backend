@@ -43,3 +43,8 @@ repos:
       - id: eslint
         files: \.[jt]s?$
         types: [file]
+
+  - repo: https://github.com/james9001/frosty-hooks.git
+    rev: v0.1
+    hooks:
+      - id: npm-run-test
