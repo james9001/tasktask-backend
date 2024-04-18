@@ -5,6 +5,7 @@ import helmet from "helmet";
 import { testRouter } from "./test.router";
 import { metricsRouter } from "./metrics.router";
 import { taskRouter } from "./task.router";
+import "./polyfills";
 
 dotenv.config();
 

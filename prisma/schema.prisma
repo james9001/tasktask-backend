@@ -17,4 +17,6 @@ model Task {
   id          String @id
   name        String
   description String
+  dueDate     BigInt
+  createdDate BigInt
 }

@@ -22,6 +22,8 @@ export class TaskRepository {
 				id: uuidv4(),
 				name: entity.name,
 				description: entity.description,
+				dueDate: entity.dueDate,
+				createdDate: BigInt(Date.now()),
 			},
 		});
 	};
@@ -32,6 +34,7 @@ export class TaskRepository {
 			data: {
 				name: entity.name,
 				description: entity.description,
+				dueDate: entity.dueDate,
 			},
 		});
 	};
@@ -43,4 +46,6 @@ export interface Task {
 	id: string;
 	name: string;
 	description: string;
+	dueDate: bigint;
+	createdDate: bigint;
 }
