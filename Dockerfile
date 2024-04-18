@@ -51,6 +51,8 @@ COPY entrypoint.sh /entrypoint.sh
 COPY --from=build /app/dist/ /app/dist
 COPY --from=nodemodules /temp/node_modules/ /app/node_modules
 
+RUN npx prisma generate
+
 #dummy copy to ensure lint phase happens
 COPY --from=lint /app/README.md /README.md
 
