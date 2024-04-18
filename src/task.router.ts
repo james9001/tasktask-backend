@@ -1,5 +1,6 @@
 import { Router, Request, Response } from "express";
-import { Task, taskRepository } from "./task.repository";
+import { taskRepository } from "./task.repository";
+import { Task } from "./task.interface";
 
 export const taskRouter = Router();
 
@@ -43,7 +44,7 @@ export interface TaskSearchRequestCriteria {
 	pageNumber: number;
 }
 
-interface TaskSearchResponse {
+export interface TaskSearchResponse {
 	data: Task[];
 	page: TaskSearchResponsePageInfo;
 }

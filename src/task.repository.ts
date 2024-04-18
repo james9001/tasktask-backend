@@ -1,6 +1,7 @@
 import * as Prisma from "@prisma/client";
 import { TaskSearchRequestCriteria } from "./task.router";
 import { v4 as uuidv4 } from "uuid";
+import { Task } from "./task.interface";
 
 export class TaskRepository {
 	prisma = new Prisma.PrismaClient();
@@ -41,11 +42,3 @@ export class TaskRepository {
 }
 
 export const taskRepository = new TaskRepository();
-
-export interface Task {
-	id: string;
-	name: string;
-	description: string;
-	dueDate: bigint;
-	createdDate: bigint;
-}
