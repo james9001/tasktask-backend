@@ -22,9 +22,11 @@ taskRouter.post("/search", async (req: Request, resp: Response) => {
 });
 
 taskRouter.post("/", async (req: Request, resp: Response) => {
-	const deserialised = req.body as Task;
-	const created = await taskRepository.create(deserialised);
-	resp.status(200).send(created);
+	resp.send(await taskRepository.create(req.body as Task));
+});
+
+taskRouter.put("/", async (req: Request, resp: Response) => {
+	resp.send(await taskRepository.update(req.body as Task));
 });
 
 export interface TaskSearchRequestCriteria {

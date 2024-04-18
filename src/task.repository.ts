@@ -25,6 +25,16 @@ export class TaskRepository {
 			},
 		});
 	};
+
+	public update = async (entity: Task): Promise<Task> => {
+		return await this.prisma.task.update({
+			where: { id: entity.id },
+			data: {
+				name: entity.name,
+				description: entity.description,
+			},
+		});
+	};
 }
 
 export const taskRepository = new TaskRepository();
